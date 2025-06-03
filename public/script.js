@@ -48,3 +48,35 @@ document.querySelectorAll('.scroll-link').forEach(link => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("btn-leia-mais");
+  const textoCompleto = document.querySelector(".texto-completo");
+
+  btn.addEventListener("click", () => {
+    if (textoCompleto.style.display === "none") {
+      textoCompleto.style.display = "block";
+      btn.textContent = "Leia menos";
+    } else {
+      textoCompleto.style.display = "none";
+      btn.textContent = "Leia mais";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('btn-leia-mais');
+  const textoCompleto = document.querySelector('.texto-completo');
+  const resumo = document.querySelector('.resumo');
+
+  btn.addEventListener('click', () => {
+    if (textoCompleto.style.display === 'none' || textoCompleto.style.display === '') {
+      textoCompleto.style.display = 'block';
+      resumo.style.display = 'none';
+      btn.textContent = 'Leia menos';
+    } else {
+      textoCompleto.style.display = 'none';
+      resumo.style.display = 'block';
+      btn.textContent = 'Leia mais';
+    }
+  });
+});
